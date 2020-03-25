@@ -2,6 +2,13 @@ sudo: required
 services:
   - docker
 
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
+
 before_install:
   - docker build -t mikezank/ngfront -f Dockerfile.dev . 
 
