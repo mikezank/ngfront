@@ -2,15 +2,8 @@ sudo: required
 services:
   - docker
 
-addons:
-  apt:
-    sources:
-      - google-chrome
-    packages:
-      - google-chrome-stable
-
 before_install:
   - docker build -t mikezank/ngfront -f Dockerfile.dev . 
 
 script:
-  - docker run mikezank/ngfront npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
+  - docker run mikezank/ngfront ng test --no-watch --no-progress --code-coverage

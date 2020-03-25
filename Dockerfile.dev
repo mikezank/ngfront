@@ -5,6 +5,14 @@ WORKDIR /app
 COPY package.json .
 RUN npm install
 RUN npm install -g @angular/cli@latest
+RUN npm install karma-firefox-launcher
+
+RUN \
+# Install Firefox
+# https://github.com/laurentj/slimerjs/blob/master/Dockerfile
+apk update && apk upgrade && \
+apk add firefox-esr xvfb bash dbus ttf-freefont fontconfig && \
+rm -rf /var/cache/apk/*
 
 COPY . /app
 
