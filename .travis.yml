@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t mikezank/ngfront -f Dockerfile.dev . 
+
+script:
+  - docker run mikezank/ngfront npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
