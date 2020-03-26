@@ -11,8 +11,8 @@ script:
 deploy:
   provider: elasticbeanstalk
   region: "us-east-1"
-  app: "ngfront"
-  env: "Ngfront-env"
+  app: "ng-front"
+  env: "NgFront-env"
   bucket_name: "elasticbeanstalk-us-east-1-187377688853"
   bucket_path: "ngfront"
   on:
