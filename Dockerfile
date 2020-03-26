@@ -13,4 +13,4 @@ RUN ng build --prod
 # PROD environment
 FROM nginx:alpine
 EXPOSE 80
-COPY --from=builder /app/dist/ngdev /usr/share/nginx/html
+COPY --from=builder /app/dist/ngfront /usr/share/nginx/html
